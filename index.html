@@ -12,16 +12,34 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuOpenIcon.classList.toggle('hidden');
+        menuCloseIcon.classList.toggle('hidden');
+
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+</script>
+
+
 <body class="bg-slate-50 text-slate-900">
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="main.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
+            <a href="index.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
                 Pesan Hari Ini
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="main.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Beranda</a>
+                <a href="index.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Beranda</a>
                 <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
                 <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
                 <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
