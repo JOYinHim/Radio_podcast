@@ -13,21 +13,7 @@
     </style>
 </head>
 
-<script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
 
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        menuOpenIcon.classList.toggle('hidden');
-        menuCloseIcon.classList.toggle('hidden');
-
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', String(!expanded));
-    });
-</script>
 
 
 <body class="bg-slate-50 text-slate-900">
@@ -195,4 +181,22 @@
     </footer>
 
 </body>
+
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuOpenIcon.classList.toggle('hidden');
+        menuCloseIcon.classList.toggle('hidden');
+
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+    });
+</script>
+
 </html>
