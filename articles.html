@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel - Pesan Hari Ini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
+            Pesan Hari Ini
+        </a>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
+            <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
+            <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
+            <a href="articles.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Artikel</a>
+            <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
+        </div>
+
+        <button
+            id="menu-btn"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+        >
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+        <div class="px-6 py-4 flex flex-col space-y-4 text-sm font-medium text-slate-700">
+            <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
+            <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
+            <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
+            <a href="articles.html" class="text-blue-600 transition">Artikel</a>
+            <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-20 text-center">
+        <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 text-sm md:text-base font-bold rounded-full mb-4">ARTIKEL</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Kumpulan Tulisan untuk Kehidupan, Keluarga, dan Pemulihan
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            Halaman ini menghimpun pokok-pokok tulisan yang selaras dengan pelayanan Pesan Hari Ini: membangun cara berpikir yang positif, baik, dan benar, serta memberi penguatan bagi keluarga dan masyarakat.
+        </p>
+    </div>
+</header>
+
+<section class="max-w-7xl mx-auto px-6 -mt-8">
+    <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/60 p-6 border border-slate-100">
+        <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+            <div class="flex-1 relative">
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Cari artikel atau topik..."
+                    class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+                >
+                <svg class="w-5 h-5 absolute left-4 top-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0" id="filterButtons">
+                <button data-filter="Semua" class="filter-btn px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold whitespace-nowrap">Semua</button>
+                <button data-filter="Pasangan & Kehidupan" class="filter-btn px-5 py-3 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-xl text-sm font-semibold transition whitespace-nowrap border border-slate-200">Pasangan & Kehidupan</button>
+                <button data-filter="Anak-anak & Remaja" class="filter-btn px-5 py-3 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-xl text-sm font-semibold transition whitespace-nowrap border border-slate-200">Anak-anak & Remaja</button>
+                <button data-filter="Pemulihan & Solusi" class="filter-btn px-5 py-3 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-xl text-sm font-semibold transition whitespace-nowrap border border-slate-200">Pemulihan & Solusi</button>
+                <button data-filter="Nilai Kehidupan" class="filter-btn px-5 py-3 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-xl text-sm font-semibold transition whitespace-nowrap border border-slate-200">Nilai Kehidupan</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="lg:col-span-2 bg-slate-900 text-white rounded-3xl p-8 md:p-10 shadow-xl">
+            <p class="text-blue-300 text-sm font-semibold uppercase tracking-[0.2em] mb-4">Pilihan Utama</p>
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-4">Membangun landasan berpikir yang benar untuk mengarungi kehidupan sehari-hari.</h2>
+            <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">
+                Tulisan-tulisan di halaman ini dapat dikembangkan dari tema besar yang sudah ada pada pelayanan Pesan Hari Ini: keluarga, pengasuhan, relasi sosial, pemulihan, dan nilai-nilai kehidupan yang membentuk sikap yang bertanggung jawab.
+            </p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Klasifikasi Utama</h3>
+            <div class="space-y-4 text-sm text-slate-600">
+                <div class="flex items-start gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600 mt-1.5"></span>
+                    <p><strong>Pasangan & Kehidupan</strong> — relasi pernikahan, komunikasi, dan kehidupan rumah tangga.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600 mt-1.5"></span>
+                    <p><strong>Anak-anak & Remaja</strong> — pengasuhan, pendidikan anak, dan tantangan remaja.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600 mt-1.5"></span>
+                    <p><strong>Pemulihan & Solusi</strong> — relasi sosial, krisis hidup, dan jalan pemulihan.</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-600 mt-1.5"></span>
+                    <p><strong>Nilai Kehidupan</strong> — moral, tanggung jawab, dan cara berpikir yang baik dan benar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Pasangan & Kehidupan" data-search="komunikasi pernikahan pasangan kehidupan keluarga rumah tangga">
+            <div class="h-52 bg-gradient-to-br from-blue-100 to-slate-200"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Pasangan & Kehidupan</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Merawat komunikasi yang sehat dalam pernikahan</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Tulisan tentang pentingnya mendengar, memahami, dan membangun kebiasaan komunikasi yang menumbuhkan kedekatan dalam rumah tangga.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Anak-anak & Remaja" data-search="anak remaja parenting pendidikan pengasuhan keluarga">
+            <div class="h-52 bg-gradient-to-br from-sky-100 to-blue-200"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Anak-anak & Remaja</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Mendidik anak dengan kasih dan ketegasan</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Ruang untuk artikel seputar pengasuhan anak yang seimbang, pembentukan karakter, dan pendampingan pada masa pertumbuhan.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Pemulihan & Solusi" data-search="pemulihan relasi sosial krisis solusi konseling masalah hidup">
+            <div class="h-52 bg-gradient-to-br from-slate-100 to-slate-300"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Pemulihan & Solusi</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Menghadapi krisis hidup tanpa kehilangan arah</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Tempat untuk tulisan-tulisan yang memberi arahan praktis bagi mereka yang sedang menghadapi konflik, tekanan, dan situasi sulit.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Nilai Kehidupan" data-search="nilai kehidupan moral tanggung jawab berpikir positif benar baik">
+            <div class="h-52 bg-gradient-to-br from-indigo-100 to-blue-100"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Nilai Kehidupan</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Berpikir positif, baik, dan benar dalam setiap situasi</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Kategori untuk artikel pendek atau panjang yang menolong pembaca membangun sudut pandang yang sehat terhadap hidup.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Pasangan & Kehidupan" data-search="pasangan hubungan suami istri kepercayaan komitmen keluarga">
+            <div class="h-52 bg-gradient-to-br from-rose-100 to-slate-200"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Pasangan & Kehidupan</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Menjaga kepercayaan di tengah tekanan hidup</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Dapat diisi dengan refleksi dan panduan bagi pasangan dalam menjaga komitmen, saling percaya, dan tetap bertumbuh bersama.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+
+        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden" data-category="Anak-anak & Remaja" data-search="remaja identitas tantangan digital pergaulan pendampingan keluarga">
+            <div class="h-52 bg-gradient-to-br from-cyan-100 to-slate-200"></div>
+            <div class="p-8">
+                <span class="inline-flex px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold mb-4">Anak-anak & Remaja</span>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Mendampingi remaja di tengah perubahan zaman</h3>
+                <p class="text-slate-600 leading-relaxed mb-5">Kategori ini cocok untuk membahas identitas, pergaulan, media digital, dan kebutuhan remaja akan pendampingan yang bijaksana.</p>
+                <a href="#" class="text-blue-600 font-semibold hover:text-blue-700 transition">Baca selengkapnya →</a>
+            </div>
+        </article>
+    </div>
+
+    <div id="emptyState" class="hidden mt-12 bg-white rounded-3xl border border-slate-200 p-10 text-center shadow-sm">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Belum ada artikel yang cocok</h3>
+        <p class="text-slate-600">Coba gunakan kata kunci lain atau pilih kategori yang berbeda.</p>
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-400 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
+        <p class="text-sm text-slate-500 text-center">
+            © 2026 Pesan Hari Ini. Seluruh Hak Cipta Dilindungi.
+        </p>
+        <p class="text-[10px] text-slate-400 mt-4 tracking-widest uppercase text-center">
+            Created by J.O.Y.
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+        const emptyState = document.getElementById('emptyState');
+
+        let activeFilter = 'Semua';
+
+        if (menuBtn && mobileMenu && menuOpenIcon && menuCloseIcon) {
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', String(!expanded));
+            });
+        }
+
+        function filterArticles() {
+            const query = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            articleCards.forEach(card => {
+                const category = card.dataset.category;
+                const searchable = card.dataset.search.toLowerCase();
+                const text = card.innerText.toLowerCase();
+
+                const categoryMatch = activeFilter === 'Semua' || category === activeFilter;
+                const searchMatch = query === '' || searchable.includes(query) || text.includes(query);
+
+                if (categoryMatch && searchMatch) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            emptyState.classList.toggle('hidden', visibleCount !== 0);
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                activeFilter = this.dataset.filter;
+
+                filterButtons.forEach(btn => {
+                    btn.className = 'filter-btn px-5 py-3 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-xl text-sm font-semibold transition whitespace-nowrap border border-slate-200';
+                });
+
+                this.className = 'filter-btn px-5 py-3 bg-blue-600 text-white rounded-xl text-sm font-semibold whitespace-nowrap';
+                filterArticles();
+            });
+        });
+
+        searchInput.addEventListener('input', filterArticles);
+    });
+</script>
+
+</body>
+</html>
