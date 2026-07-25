@@ -32,20 +32,50 @@
 
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
-                Pesan Hari Ini
-            </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="index.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Beranda</a>
-                <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
-                <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
-                <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
-            </div>
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
+            Pesan Hari Ini
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+            <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
+            <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
+            <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
+            <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
         </div>
-    </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+            id="menu-btn"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+        >
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+        <div class="px-6 py-4 flex flex-col space-y-4 text-sm font-medium text-slate-700">
+            <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
+            <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
+            <a href="services.html" class="hover:text-blue-600 transition">Layanan</a>
+            <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
+        </div>
+    </div>
+</nav>
+
 
         <section class="py-24 max-w-7xl mx-auto px-6">
         <div class="flex flex-col md:flex-row items-center gap-16">
