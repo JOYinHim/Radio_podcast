@@ -17,11 +17,38 @@
             <a href="index.html" class="text-xl font-bold text-blue-700 hover:opacity-80 transition-opacity">
                 Pesan Hari Ini
             </a>
+
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
                 <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
                 <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
                 <a href="services.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Layanan</a>
-                <a href="articles.html" class="hover:text-blue-600 transition">Artikel</a>                
+                <a href="articles.html" class="hover:text-blue-600 transition">Artikel</a>
+                <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
+            </div>
+
+            <button
+                id="menu-btn"
+                type="button"
+                class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
+                aria-label="Buka menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+            <div class="px-6 py-4 flex flex-col space-y-4 text-sm font-medium text-slate-700">
+                <a href="index.html" class="hover:text-blue-600 transition">Beranda</a>
+                <a href="about.html" class="hover:text-blue-600 transition">Profil</a>
+                <a href="services.html" class="text-blue-600 transition">Layanan</a>
+                <a href="articles.html" class="hover:text-blue-600 transition">Artikel</a>
                 <a href="kontak.html" class="hover:text-blue-600 transition">Kontak</a>
             </div>
         </div>
@@ -39,38 +66,9 @@
         </div>
     </header>
 
-    <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center gap-16">
-            <div class="w-full md:w-5/12">
-                <div class="aspect-[3/4] bg-slate-100 rounded-3xl overflow-hidden relative shadow-2xl border border-slate-200">
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 z-0">
-                        <svg class="w-16 h-16 mb-4 opacity-20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 15c-2.33 0-4.31-1.46-5.11-3.5.8-2.04 2.78-3.5 5.11-3.5s4.31 1.46 5.11 3.5c-.8 2.04-2.78 3.5-5.11 3.5zm0-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                        <span class="font-medium">Foto Layanan / Siaran</span>
-                    </div>
-                    <img src="foto-ibu-adry.jpg" alt="Layanan Pesan Hari Ini"
-                         class="absolute inset-0 w-full h-full object-cover z-10 cursor-pointer"
-                         onclick="openModal(this.src)"
-                         onerror="this.style.display='none'">
-                </div>
-            </div>
-
-            <div class="w-full md:w-7/12">
-                <h2 class="text-3xl font-bold mb-8 text-slate-900">Pelayanan Pesan Hari Ini</h2>
-                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
-                    <p>
-                        Pelayanan <strong>Pesan Hari Ini</strong> dikembangkan untuk menghadirkan pesan yang membangun kehidupan, memperkuat keluarga, dan menolong masyarakat memahami prinsip hidup yang baik dan benar.
-                    </p>
-                    <p>
-                        Melalui media siaran radio, tips singkat, dan konseling, kami berupaya menjangkau mereka yang membutuhkan penguatan, arahan, dan pendampingan dalam berbagai persoalan keluarga, pendidikan anak, serta masalah sosial.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-slate-900 text-white">
+    <section class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-center">Layanan Utama</h2>
+            <h2 class="text-3xl font-bold mb-16 text-center">Tiga Bentuk Pelayanan Utama</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="group bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
                     <div class="text-blue-500 font-bold mb-6 flex items-center gap-2">
@@ -78,25 +76,27 @@
                     </div>
                     <h3 class="text-2xl font-bold mb-4 tracking-tight">Siaran Radio</h3>
                     <p class="text-slate-400 leading-relaxed">
-                        Siaran ini dikemas dalam bentuk rekaman audio yang dapat dipakai untuk menjangkau masyarakat secara luas dengan pesan yang relevan dan membangun.
+                        Siaran dikemas dalam bentuk rekaman audio untuk menjangkau masyarakat secara luas dengan pesan yang relevan, membangun, dan mudah diterima.
                     </p>
                 </div>
+
                 <div class="group bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
                     <div class="text-blue-500 font-bold mb-6 flex items-center gap-2">
                         <span class="w-8 h-px bg-blue-500"></span> 02
                     </div>
                     <h3 class="text-2xl font-bold mb-4 tracking-tight">Tips</h3>
                     <p class="text-slate-400 leading-relaxed">
-                        Pesan singkat yang berisi nilai kehidupan, sosial, dan keluarga, disampaikan secara padat, jelas, dan mudah dipahami.
+                        Pesan singkat yang berisi nilai kehidupan, sosial, dan keluarga, disampaikan secara padat, jelas, dan mudah dipahami oleh pendengar.
                     </p>
                 </div>
+
                 <div class="group bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:border-blue-500 transition-all duration-300">
                     <div class="text-blue-500 font-bold mb-6 flex items-center gap-2">
                         <span class="w-8 h-px bg-blue-500"></span> 03
                     </div>
                     <h3 class="text-2xl font-bold mb-4 tracking-tight">Konsultasi / Konseling</h3>
                     <p class="text-slate-400 leading-relaxed">
-                        Mendengar masalah yang dihadapi dan memberikan masukan melalui pelayanan konseling oleh konselor yang berpengalaman lebih dari 15 tahun.
+                        Pelayanan yang mendengar masalah yang dihadapi dan memberi masukan melalui konselor yang berpengalaman lebih dari 15 tahun.
                     </p>
                 </div>
             </div>
@@ -140,21 +140,23 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between mb-12">
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-900">Pembicara</h2>
+                    <h2 class="text-3xl font-bold text-slate-900">Pembicara & Topik</h2>
                     <p class="text-slate-600 mt-3 max-w-2xl">
-                        Inilah Host dan Pembicara yang melayani dalam Pesan Hari Ini.
+                        Contoh tampilan pembicara yang bisa diisi secara bertahap sesuai kebutuhan konten.
                     </p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-                    <div class="aspect-[4/3] bg-slate-100 relative">
+                    <div class="aspect-[3/4] bg-slate-100 relative">
                         <img src="foto-ibu-adry_s.jpg" alt="Adryane Usmany"
-                            class="absolute inset-0 w-full h-full object-contain z-10 cursor-pointer bg-slate-100"
-                            onclick="openModal(this.src)"
-                            onerror="this.style.display='none'">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">foto-ibu-adry.jpg</div>
+                             class="absolute inset-0 w-full h-full object-contain z-10 cursor-pointer bg-slate-100"
+                             onclick="openModal(this.src)"
+                             onerror="this.style.display='none'">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium z-0">
+                            foto-ibu-adry_s.jpg
+                        </div>
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold mb-2 text-slate-900">Adryane Usmany</h3>
@@ -166,40 +168,6 @@
                             <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Keluarga</span>
                             <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Masalah Sosial</span>
                             <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Nilai Kehidupan</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-                    <div class="aspect-[4/3] bg-slate-100 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">Foto Pembicara 2</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Nama Pembicara</h3>
-                        <p class="text-sm text-blue-600 font-semibold mb-4">Pembicara</p>
-                        <p class="text-slate-600 leading-relaxed mb-5">
-                            Gunakan area ini untuk menuliskan topik yang dibawakan, fokus pelayanan, atau ringkasan pengalaman pembicara.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Relasi</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Masalah Sosial</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-                    <div class="aspect-[4/3] bg-slate-100 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">Foto Pengisi VO Tips</div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Pengisi / VO Tips</h3>
-                        <p class="text-sm text-blue-600 font-semibold mb-4">Suara Inspirasi</p>
-                        <p class="text-slate-600 leading-relaxed mb-5">
-                            Tampilkan foto dan profil singkat pengisi suara Tips agar pengunjung dapat mengenal pembawa pesan harian ini.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Nilai Kehidupan</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Keluarga</span>
                         </div>
                     </div>
                 </div>
@@ -239,9 +207,6 @@
 
     <script>
         function openModal(src) {
-            const eventTarget = event.currentTarget;
-            if (window.getComputedStyle(eventTarget).opacity === '0' || eventTarget.style.display === 'none') return;
-
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
 
@@ -263,18 +228,25 @@
         document.getElementById('imageModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
-    </script>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
-            <p class="text-sm text-slate-500 text-center">
-                © 2026 Pesan Hari Ini. Seluruh Hak Cipta Dilindungi.
-            </p>
-            <p class="text-[10px] text-slate-400 mt-4 tracking-widest uppercase text-center">
-                Created by J.O.Y.
-            </p>
-        </div>
-    </footer>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+
+            if (!menuBtn || !mobileMenu || !menuOpenIcon || !menuCloseIcon) return;
+
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+
+                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', String(!expanded));
+            });
+        });
+    </script>
 
 </body>
 </html>
