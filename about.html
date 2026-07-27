@@ -10,6 +10,9 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <body class="bg-white text-slate-900">
 
     <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
@@ -106,23 +109,38 @@
     </section>
 
     <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 text-3xl">🏠</div>
-                <h4 class="text-xl font-bold mb-3">Keluarga</h4>
-                <p class="text-slate-600 text-sm leading-relaxed">Fokus pada pemulihan hubungan suami-istri, pola asuh anak, dan tantangan remaja.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-10 text-center">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i data-lucide="heart-handshake" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Hubungan Pernikahan</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Berfokus pada pemulihan relasi suami-istri dan penguatan kehidupan rumah tangga.
+                </p>
             </div>
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-600 text-3xl">🤝</div>
-                <h4 class="text-xl font-bold mb-3">Solusi Sosial</h4>
-                <p class="text-slate-600 text-sm leading-relaxed">Membahas isu perselingkuhan, judi, keuangan, hingga pencegahan pelecehan seksual.</p>
+
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-10 text-center">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center">
+                    <i data-lucide="users" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Pengasuhan Anak</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Membahas pola asuh anak, tantangan remaja, dan cara membangun relasi yang sehat antara orang tua dan anak.
+                </p>
             </div>
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-amber-600 text-3xl">⛪</div>
-                <h4 class="text-xl font-bold mb-3">Koneksi Rohani</h4>
-                <p class="text-slate-600 text-sm leading-relaxed">Layanan konseling dan jembatan bagi pendengar untuk terhubung dengan gereja lokal.</p>
+
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-10 text-center">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                    <i data-lucide="building-2" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Solusi Sosial</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Membahas berbagai persoalan sosial, seperti perselingkuhan, judi, masalah keuangan, dan pencegahan pelecehan seksual.
+                </p>
             </div>
         </div>
+
     </section>
 
 
@@ -163,6 +181,9 @@
         document.getElementById('imageModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
+    </script>
+    <script>
+    lucide.createIcons();
     </script>
 </body>
 
