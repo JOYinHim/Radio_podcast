@@ -136,38 +136,74 @@
         </div>
     </section>
 
-    <section class="py-24 bg-slate-50 border-y border-slate-100">
+ <section class="py-24 bg-slate-50 border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between mb-12">
                 <div>
                     <h2 class="text-3xl font-bold text-slate-900">Pembicara & Topik</h2>
                     <p class="text-slate-600 mt-3 max-w-2xl">
-                        Contoh tampilan pembicara yang bisa diisi secara bertahap sesuai kebutuhan konten.
+                        Mengenal lebih dekat pembicara yang terlibat dalam pelayanan Pesan Hari Ini
+                        serta tema-tema yang dibagikan kepada keluarga dan masyarakat.
                     </p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-                    <div class="aspect-[3/4] bg-slate-100 relative">
-                        <img src="foto-ibu-adry_s.jpg" alt="Adryane Usmany"
-                             class="absolute inset-0 w-full h-full object-contain z-10 cursor-pointer bg-slate-100"
-                             onclick="openModal(this.src)"
-                             onerror="this.style.display='none'">
-                        <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium z-0">
-                            foto-ibu-adry_s.jpg
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden md:col-span-2">
+                    <div class="grid md:grid-cols-2">
+                        <div class="aspect-[3/4] bg-slate-100 relative">
+                            <img
+                                src="foto-ibu-adry.jpg"
+                                alt="Adryane Usmany"
+                                class="absolute inset-0 w-full h-full object-contain z-10 cursor-pointer bg-slate-100"
+                                onclick="openModal(this.src)"
+                                onerror="this.style.display='none'"
+                            />
+                            <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-medium z-0">
+                                foto-ibu-adry.jpg
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Adryane Usmany</h3>
-                        <p class="text-sm text-blue-600 font-semibold mb-4">Host / Narasumber</p>
-                        <p class="text-slate-600 leading-relaxed mb-5">
-                            Profil singkat pembicara dapat ditulis di sini untuk memperkenalkan latar belakang pelayanan atau bidang keahliannya.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Keluarga</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Masalah Sosial</span>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Nilai Kehidupan</span>
+
+                        <div class="p-8 md:p-10 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-900">Adryane Usmany</h3>
+                            <p class="text-sm text-blue-600 font-semibold mb-5">Host / Narasumber / Konselor</p>
+
+                            <div class="space-y-4 text-slate-600 leading-relaxed">
+                                <p>
+                                    Adryane Usmany memiliki pengalaman panjang dalam pelayanan keluarga,
+                                    media, dan konseling.
+                                </p>
+                                <p>
+                                    Ia berkeja di Focus on the Family Indonesia,
+                                    sebuah lembaga internasional yang berpusat di Colorado Springs, Colorado,
+                                    Amerika Serikat, yang berfokus pada penguatan keluarga.
+                                </p>
+                                <p>
+                                    Melalui berbagai yang ada dibuat dengan radio, televisi, dan media cetak,
+                                    ia menyampaikan pesan-pesan tentang keluarga, pendidikan anak,
+                                    dan persoalan sosial kepada masyarakat luas.
+                                </p>
+                                <p>
+                                    Ia juga melayani konseling bagi pasangan suami istri, orang tua,
+                                    dan anggota keluarga lainnya yang membutuhkan pendampingan.
+                                </p>
+                                <p>
+                                    Sejak tahun 2014, ia mengembangkan program <em>Pesan Hari Ini</em>
+                                    untuk menjangkau masyarakat melalui siaran media, seminar, workshop,
+                                    dan forum diskusi.
+                                </p>
+                                <p>
+                                    Program ini bertujuan menolong setiap orang membangun kehidupan yang sehat,
+                                    relasi yang baik, dan sikap hidup yang menghargai anugerah Tuhan.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mt-6">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Keluarga</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Pendidikan Anak</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Konseling</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Media</span>
+                            </div>
                         </div>
                     </div>
                 </div>
